@@ -4,16 +4,16 @@ import functools
 
 
 def cache(func: callable) -> callable:
-    cash_storage = {}
+    cashe_storage = {}
 
     @functools.wraps(func)
     def wrapper(*args: tuple) -> callable:
-        if args in cash_storage:
-            print("Getting from cash")
-            return cash_storage[args]
+        if args in cashe_storage:
+            print("Getting from cashe")
+            return cashe_storage[args]
 
         print("Calculating new result")
         result = func(*args)
-        cash_storage[args] = result
+        cashe_storage[args] = result
         return result
     return wrapper
