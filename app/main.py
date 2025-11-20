@@ -8,7 +8,7 @@ def cache(func: callable) -> callable:
     @functools.wraps(func)
     def wrapper(*args: tuple) -> callable:
         if args in cache_storage:
-            print("Getting from cashe")
+            print("Getting from cache")
             return cache_storage[args]
 
         print("Calculating new result")
